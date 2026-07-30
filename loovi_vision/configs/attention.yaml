@@ -10,7 +10,7 @@ models:
   headpose_onnx: models/dmhead.onnx   # DMHead ONNX (head pose, gaze 2차)
 
 camera:
-  id: 1           # id=0 내장 웹캠 / id=1 Iriun Webcam
+  id: 0           # id=0 내장 웹캠 / id=1 Iriun Webcam
   width: 1920
   height: 1080
   fourcc: MJPG    # 픽셀 포맷 강제. 내장 웹캠은 무압축(YUY2)이면 1080p가 ~5fps로 떨어져 MJPG 권장.
@@ -99,7 +99,7 @@ gaze:
   poses_dir: data/poses
 
 realtime:
-  enable: true               # false 면 SQS 전송 없이 로컬 기록만
+  enable: enable         # false 면 SQS 전송 없이 로컬 기록만
   device_id: loovi-cam-01
   sqs_queue_url: ""          # 빈 값이면 환경변수 LOOVI_SQS_QUEUE_URL 사용
   sqs_region: ""             # AWS 리전(예: ap-northeast-2). 빈 값이면 AWS_REGION/AWS_DEFAULT_REGION 환경변수 사용
